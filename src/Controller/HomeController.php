@@ -18,6 +18,9 @@ class HomeController {
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function index(Application $app, Request $request) {
-        return $app->json(['key' => 'val', 'params' => $request->getQueryString()]);
+        return $app->json([
+            'key' => 'val',
+            'params' => $request->query->all()
+        ]);
     }
 }

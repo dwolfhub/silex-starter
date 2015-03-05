@@ -11,6 +11,8 @@ $defaultConfigFileLoc = __DIR__ . '/config/default.yml';
 $configFileLoc = file_exists($envConfigFileLoc)? $envConfigFileLoc: $defaultConfigFileLoc;
 $app->register(new DerAlex\Silex\YamlConfigServiceProvider($configFileLoc));
 
+$app['debug'] = $app['config']['debug'];
+
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
