@@ -13,8 +13,6 @@ $app->register(new DerAlex\Silex\YamlConfigServiceProvider($configFileLoc));
 
 $app['debug'] = $app['config']['debug'];
 
-$app->register(new Silex\Provider\ServiceControllerServiceProvider());
-
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => $app['config']['database']
 ]);
@@ -23,5 +21,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__ . '/../views',
 ]);
 
+$app->register(new \Knp\Provider\MigrationServiceProvider(), array(
+    'migration.path' => __DIR__.'/../src/Migration'
+));
 
 return $app;
