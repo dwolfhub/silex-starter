@@ -1,10 +1,10 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
 $app = require __DIR__ . '/bootstrap.php';
 
-$app['debug'] = true; // TODO: set this from config
+$app['debug'] = $app['config']['debug'];
+
+// Routes
+$app->get('/', 'SilexStarter\Controller\HomeController::index');
 
 return $app;

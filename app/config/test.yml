@@ -4,7 +4,7 @@
 debug: true
 
 # Database Configuration
-mysql:
+database:
     driver: pdo_mysql
     host: localhost
     user: root

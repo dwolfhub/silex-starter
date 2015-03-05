@@ -17,8 +17,6 @@
         "deralex/yaml-config-service-provider": "~1.0"
     },
     "autoload": {
-        "psr-4": {
-            "DWolf555\\SilexStarter\\": "src/"
-        }
+        "psr-4": {"SilexStarter\\": "src/"}
     }
 }
