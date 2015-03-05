@@ -2,22 +2,29 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$config = new
-
 $app = new Silex\Application();
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array( // TODO: get these from the config
-        'driver' => 'pdo_mysql',
-        'host' => 'localhost',
-        'user' => 'meetapet',
-        'password' => 'GGL;5"^wLP(8}*n',
-        'dbname' => 'map_live',
-        'charset' => 'utf8',
-    ),
-));
-$app->register(new \Meetapet\Google\Geocode\GeocodeServiceProvider());
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../views',
-));
+
+// get relevant config file and register service provider
+$app['env'] = getenv('APPLICATION_ENV');
+$envConfigFileLoc = __DIR__ . '/config/' . $app['env'] . '.yml';
+$defaultConfigFileLoc = __DIR__ . '/config/default.yml';
+$configFileLoc = file_exists($envConfigFileLoc)? $envConfigFileLoc: $defaultConfigFileLoc;
+$app->register(new DerAlex\Silex\YamlConfigServiceProvider($configFileLoc));
+
+$app->register(new Silex\Provider\DoctrineServiceProvider(), [
+    'db.options' => [
+        'driver' => $app['config']['mysql.driver'],
+        'host' => $app['config']['mysql.host'],
+        'user' => $app['config']['mysql.user'],
+        'password' => $app['config']['mysql.password'],
+        'dbname' => $app['config']['mysql.dbname'],
+        'charset' => $app['config']['mysql.charset'],
+    ],
+]);
+
+$app->register(new Silex\Provider\TwigServiceProvider(), [
+    'twig.path' => __DIR__ . '/../views',
+]);
+
 
 return $app;

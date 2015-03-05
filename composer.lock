@@ -4,8 +4,60 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7be8ffbdaa29254f5eb492b046956141",
+    "hash": "bc8d7fcc501da37fc90429d3ca787d96",
     "packages": [
+        {
+            "name": "deralex/yaml-config-service-provider",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deralex/YamlConfigServiceProvider.git",
+                "reference": "08ce96bf19f0014feaeb9606ef29c164bd4a43de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deralex/YamlConfigServiceProvider/zipball/08ce96bf19f0014feaeb9606ef29c164bd4a43de",
+                "reference": "08ce96bf19f0014feaeb9606ef29c164bd4a43de",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": ">=1.0",
+                "symfony/yaml": "~2.4"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.0.*@dev",
+                "symfony/yaml": "~2.4"
+            },
+            "suggest": {
+                "symfony/yaml": "~2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "DerAlex\\Silex": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kluth",
+                    "email": "contact@alexanderkluth.com"
+                }
+            ],
+            "description": "Silex ServiceProvider for using YAML configuration files",
+            "keywords": [
+                "silex"
+            ],
+            "time": "2014-01-29 15:54:57"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.3",
@@ -1020,6 +1072,53 @@
                 "url"
             ],
             "time": "2015-01-15 12:15:12"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.6.4",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/60ed7751671113cf1ee7d7778e691642c2e9acd8",
+                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-01-25 04:39:26"
         }
     ],
     "packages-dev": [],
