@@ -3,3 +3,5 @@ Silex starter project.
 
 ## TODOs:
 - Caching routes
+- Unit testing
+- Auth
