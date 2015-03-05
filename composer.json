@@ -1,0 +1,22 @@
+{
+    "name": "dwolf555/silex-starter",
+    "description": "Silex starter project.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Wolf",
+            "email": "danielrwolf5@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "silex/silex": "~1.2",
+        "doctrine/dbal": "~2.5",
+        "symfony/console": "~2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "DWolf555\\SilexStarter\\": "src/"
+        }
+    }
+}
