@@ -23,8 +23,8 @@ class CreateUsersTable extends AbstractMigration
     public function up()
     {
         $users = $this->table('users');
-        $users->addColumn('password', 'string')
-            ->addColumn('email', 'string')
+        $users->addColumn('email', 'string')
+            ->addColumn('password', 'string')
             ->addColumn('created', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addIndex('email', ['unique' => true])
             ->save();

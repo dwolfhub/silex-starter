@@ -20,7 +20,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 ]);
 
 $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
-    'http_cache.cache_dir' => dirname(__DIR__) . '/config/',
+    'http_cache.cache_dir' => dirname(__DIR__) . '/cache/',
 ));
 
 // twig is not always necessary
