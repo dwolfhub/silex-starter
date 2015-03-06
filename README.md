@@ -5,3 +5,4 @@ Silex starter project.
 - Caching routes
 - Unit testing
 - Auth
+- Models

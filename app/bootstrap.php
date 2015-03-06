@@ -21,7 +21,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 
 // twig is not always necessary
 //$app->register(new Silex\Provider\TwigServiceProvider(), [
-//    'twig.path' => __DIR__ . '/../views',
+//    'twig.path' => __DIR__ . '/../frontend',
 //]);
 
 // console app
