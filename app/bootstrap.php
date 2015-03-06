@@ -21,12 +21,12 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 
 // Logging
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile' => __DIR__ . 'logs/app.log',
+    'monolog.logfile' => __DIR__ . '/logs/app.log',
 ));
 
 // Cache
 //$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
-//    'http_cache.cache_dir' => dirname(__DIR__) . '/cache/',
+//    'http_cache.cache_dir' => __DIR__ . '/cache/',
 //));
 
 // Templates
