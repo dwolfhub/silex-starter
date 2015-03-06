@@ -19,13 +19,17 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => $app['config']['database']
 ]);
 
+$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+    'http_cache.cache_dir' => dirname(__DIR__) . '/config/',
+));
+
 // twig is not always necessary
 //$app->register(new Silex\Provider\TwigServiceProvider(), [
 //    'twig.path' => dirname(__DIR__) . '/frontend/twig',
 //]);
 
 // console app
-$app->register(new \Knp\Provider\ConsoleServiceProvider(), array(
+$app->register(new Knp\Provider\ConsoleServiceProvider(), array(
     'console.name'              => $app['config']['name'],
     'console.version'           => $app['config']['version'],
     'console.project_directory' => dirname(__DIR__)
