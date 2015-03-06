@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $app = new Silex\Application();
 $app['env'] = getenv('APPLICATION_ENV');
@@ -21,14 +21,14 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 
 // twig is not always necessary
 //$app->register(new Silex\Provider\TwigServiceProvider(), [
-//    'twig.path' => __DIR__ . '/../frontend',
+//    'twig.path' => dirname(__DIR__) . '/frontend/twig',
 //]);
 
 // console app
 $app->register(new \Knp\Provider\ConsoleServiceProvider(), array(
     'console.name'              => $app['config']['name'],
     'console.version'           => $app['config']['version'],
-    'console.project_directory' => __DIR__ . '/..'
+    'console.project_directory' => dirname(__DIR__)
 ));
 
 return $app;
