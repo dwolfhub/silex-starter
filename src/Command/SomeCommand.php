@@ -16,20 +16,18 @@ use Symfony\Component\Console\Input\InputOption;
 class Migrate extends Command {
 
     protected function configure() {
-        $this
-            ->setName('migrate:up')
-            ->setDescription('Update your database.')
+        $this->setName('some:command')
+            ->setDescription('Some command.')
             ->addArgument(
-                'userId',
+                'id',
                 InputArgument::OPTIONAL,
-                'Import for a specific user'
+                'Some command with an id.'
             )
             ->addOption(
                 'debug',
                 null,
                 InputOption::VALUE_NONE,
-                'If set, the task will run in debug mode'
-            )
-        ; // nice, new line
+                'Run in debug mode.'
+            );
     }
 }
