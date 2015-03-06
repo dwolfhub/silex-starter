@@ -22,9 +22,14 @@ class HomeController {
         $users = new UserQueryRepository($app['db']);
         $users = $users->getAll();
 
-        return $app->json([
-            'key' => 'val',
-            'params' => $users
-        ]);
+        return $app->json(
+            [
+                'key' => 'val',
+                'params' => $users
+            ],
+            200,
+            [
+                'Cache-Control' => 's-maxage=3600, public'
+            ]);
     }
 }
