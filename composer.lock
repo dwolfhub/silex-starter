@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ef4584c7dd796cec76a0c1d7d84bd69",
+    "hash": "477f18209773a3823b92e68ec11308f7",
     "packages": [
         {
             "name": "deralex/yaml-config-service-provider",
@@ -1256,7 +1256,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "knplabs/migration-service-provider": 20
+        "knplabs/migration-service-provider": 20,
+        "knplabs/console-service-provider": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

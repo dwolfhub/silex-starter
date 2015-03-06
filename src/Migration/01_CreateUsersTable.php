@@ -5,30 +5,30 @@ namespace SilexStarter\Migration;
 use Doctrine\DBAL\Schema\Schema;
 use Silex\Application;
 
-class ProjectMigration
+class CreateUsersTable
 {
     public function getMigrationInfo()
     {
-        return 'First migration message.';
+        return 'Create users table.';
     }
 
     public function schemaUp(Schema $schema)
     {
-        //
+        $schema->createTable('users')
+            ->addColumn('id', 'int', [
+                'unsigned' => true,
+                'autoincrement' => true
+            ])
+            ->addColumn('username', 'varchar', [
+                'notnull' => true
+            ])
+            ->addColumn('created', 'timestamp', [
+                'notnull' => true
+            ]);
     }
 
     public function schemaDown(Schema $schema)
     {
-        //
-    }
-
-    public function appUp(Application $app)
-    {
-        //
-    }
-
-    public function appDown(Application $app)
-    {
-        //
+        $schema->dropTable('users');
     }
 }

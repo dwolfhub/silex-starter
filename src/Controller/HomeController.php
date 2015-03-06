@@ -8,6 +8,7 @@
 namespace SilexStarter\Controller;
 
 use Silex\Application;
+use SilexStarter\QueryRepository\UserQueryRepository;
 use Symfony\Component\HttpFoundation\Request;
 
 class HomeController {
@@ -18,9 +19,12 @@ class HomeController {
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function index(Application $app, Request $request) {
+        $users = new UserQueryRepository($app['db']);
+        $users = $users->getAll();
+
         return $app->json([
             'key' => 'val',
-            'params' => $request->query->all()
+            'params' => $users
         ]);
     }
 }
