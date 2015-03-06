@@ -1,6 +1,8 @@
 # Configuration for Silex Starter
 # This default config will be loaded unless APPLICATION_ENV is set
 # and a file of that name exists in this folder
+name: silex-starter
+version: 0.0.1
 debug: true
 
 # Database Configuration
@@ -8,6 +10,6 @@ database:
     driver: pdo_mysql
     host: localhost
     user: root
-    password: root
+    password:
     dbname: database1
     charset: utf8

@@ -21,6 +21,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => __DIR__ . '/../views',
 ]);
 
+$app->register(new \Knp\Provider\ConsoleServiceProvider(), array(
+    'console.name'              => $app['config']['name'],
+    'console.version'           => $app['config']['version'],
+    'console.project_directory' => __DIR__ . '/..'
+));
+
 $app->register(new \Knp\Provider\MigrationServiceProvider(), array(
     'migration.path' => __DIR__.'/../src/Migration'
 ));
