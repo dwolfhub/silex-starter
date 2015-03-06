@@ -30,9 +30,9 @@ The standard setup will use the cache folder to store response and serve respons
 ## Authentication
 
 Add routes you wish to secure to the `$secureRoutes` array in app/app.php.
-Login is done with an email and username posted to /login. 
+Login is done with an email and username posted to `/login`. 
 Add the returned token to the headers of authenticated requests as `X-Auth-Token`.
-Invalidate a token with /logout.
+Invalidate a token with `/logout`.
 
 ## Unit Tests
 
