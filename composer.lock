@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "477f18209773a3823b92e68ec11308f7",
+    "hash": "c03aa03ff080ddd5a8ff48b25be694c3",
     "packages": [
         {
             "name": "deralex/yaml-config-service-provider",
@@ -577,51 +577,6 @@
             "time": "2013-06-13 12:43:39"
         },
         {
-            "name": "knplabs/migration-service-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/MigrationServiceProvider.git",
-                "reference": "1e03d2c3d188c212751577ec7c50906dec55791f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/MigrationServiceProvider/zipball/1e03d2c3d188c212751577ec7c50906dec55791f",
-                "reference": "1e03d2c3d188c212751577ec7c50906dec55791f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": "~2.1",
-                "knplabs/console-service-provider": "dev-master",
-                "php": ">=5.3.2",
-                "symfony/finder": "2.1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Knplabs",
-                    "homepage": "http://knplabs.com"
-                }
-            ],
-            "description": "Doctrine migration service provider for Silex",
-            "homepage": "http://knplabs.com",
-            "keywords": [
-                "doctrine2",
-                "migration",
-                "silex"
-            ],
-            "time": "2014-08-19 15:13:06"
-        },
-        {
             "name": "pimple/pimple",
             "version": "v1.1.1",
             "source": {
@@ -706,6 +661,68 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "robmorgan/phinx",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robmorgan/phinx.git",
+                "reference": "f6be670d9f73b463539f52bf5389f6e412b5049b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/f6be670d9f73b463539f52bf5389f6e412b5049b",
+                "reference": "f6be670d9f73b463539f52bf5389f6e412b5049b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/config": "~2.6.0",
+                "symfony/console": "~2.6.0",
+                "symfony/yaml": "~2.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "dev-phpcs-fixer"
+            },
+            "bin": [
+                "bin/phinx"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phinx\\": "src/Phinx"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Morgan",
+                    "email": "robbym@gmail.com",
+                    "homepage": "http://robmorgan.id.au",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "http://shadowhand.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
+            "homepage": "https://phinx.org",
+            "keywords": [
+                "database",
+                "database migrations",
+                "db",
+                "migrations",
+                "phinx"
+            ],
+            "time": "2015-02-23 16:39:42"
+        },
+        {
             "name": "silex/silex",
             "version": "v1.2.3",
             "source": {
@@ -786,6 +803,54 @@
                 "microframework"
             ],
             "time": "2015-01-20 16:45:58"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v2.6.4",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "a9f781ba1221067d1f07c8cec0bc50f81b8d7408"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/a9f781ba1221067d1f07c8cec0bc50f81b8d7408",
+                "reference": "a9f781ba1221067d1f07c8cec0bc50f81b8d7408",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-01-21 20:57:55"
         },
         {
             "name": "symfony/console",
@@ -963,27 +1028,32 @@
             "time": "2015-02-01 16:10:57"
         },
         {
-            "name": "symfony/finder",
-            "version": "v2.1.13",
-            "target-dir": "Symfony/Component/Finder",
+            "name": "symfony/filesystem",
+            "version": "v2.6.4",
+            "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Finder.git",
-                "reference": "0dbc61194b58bc513e003789853ddfe0aea8cf33"
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "a1f566d1f92e142fa1593f4555d6d89e3044a9b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/0dbc61194b58bc513e003789853ddfe0aea8cf33",
-                "reference": "0dbc61194b58bc513e003789853ddfe0aea8cf33",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/a1f566d1f92e142fa1593f4555d6d89e3044a9b7",
+                "reference": "a1f566d1f92e142fa1593f4555d6d89e3044a9b7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Finder": ""
+                    "Symfony\\Component\\Filesystem\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -992,19 +1062,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
-            "description": "Symfony Finder Component",
+            "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-25 15:47:15"
+            "time": "2015-01-03 21:13:09"
         },
         {
             "name": "symfony/http-foundation",
@@ -1256,8 +1324,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "knplabs/migration-service-provider": 20,
-        "knplabs/console-service-provider": 20
+        "knplabs/console-service-provider": 20,
+        "robmorgan/phinx": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
