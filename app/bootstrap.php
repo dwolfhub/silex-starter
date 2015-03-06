@@ -20,25 +20,28 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 ]);
 
 // Logging
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-    'monolog.logfile' => __DIR__ . '/logs/app.log',
-));
+$app->register(new Silex\Provider\MonologServiceProvider(), [
+        'monolog.logfile' => __DIR__ . '/logs/app.log',
+]);
+
+// Security
+//$app->register(new Silex\Provider\SecurityServiceProvider());
 
 // Cache
-//$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+//$app->register(new Silex\Provider\HttpCacheServiceProvider(), [
 //    'http_cache.cache_dir' => __DIR__ . '/cache/',
-//));
-
+//]);
+//
 // Templates
 //$app->register(new Silex\Provider\TwigServiceProvider(), [
 //    'twig.path' => dirname(__DIR__) . '/frontend/twig',
 //]);
-
+//
 // Console Commands
-//$app->register(new Knp\Provider\ConsoleServiceProvider(), array(
+//$app->register(new Knp\Provider\ConsoleServiceProvider(), [
 //    'console.name'              => $app['config']['name'],
 //    'console.version'           => $app['config']['version'],
 //    'console.project_directory' => dirname(__DIR__)
-//));
+//]);
 
 return $app;

@@ -19,7 +19,8 @@
         "symfony/yaml": "~2.6",
         "deralex/yaml-config-service-provider": "~1.0",
         "knplabs/console-service-provider": "dev-master",
-        "robmorgan/phinx": "dev-master"
+        "robmorgan/phinx": "dev-master",
+        "monolog/monolog": "1.13.*@dev"
     },
 
     "autoload": {
