@@ -17,6 +17,7 @@ run `php vendor/bin/phinx` in the app root folder for commands
 
 ### Models and Queries
 
+// TODO
 
 ## Routes and Controllers
 
@@ -26,8 +27,11 @@ If you want to cache a response, simply add the `Cache-Control` header to someth
 The standard setup will use the cache folder to store response and serve responses from there without having to bootstrap the app.
 
 
-## TODOs:
-- Caching routes
-- Unit testing
-- Auth
-- Models
+## Authentication
+
+// TODO
+
+
+## Unit Tests
+
+// TODO
