@@ -19,17 +19,19 @@ class HomeController {
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function index(Application $app, Request $request) {
-        $users = new UserQueryRepository($app['db']);
-        $users = $users->getAll();
+        $usersRepo = new UserQueryRepository($app['db']);
+        $users = $usersRepo->getAll();
 
         return $app->json(
             [
                 'key' => 'val',
-                'params' => $users
+                'params' => $request->query->all(),
+                'users' => $users
             ],
             200,
             [
                 'Cache-Control' => 's-maxage=3600, public'
-            ]);
+            ]
+        );
     }
 }
