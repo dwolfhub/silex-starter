@@ -13,7 +13,7 @@ use Knp\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class Migrate extends Command {
+class SomeCommand extends Command {
 
     protected function configure() {
         $this->setName('some:command')

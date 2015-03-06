@@ -19,6 +19,11 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => $app['config']['database']
 ]);
 
+// Logging
+$app->register(new Silex\Provider\MonologServiceProvider(), array(
+    'monolog.logfile' => __DIR__ . 'logs/app.log',
+));
+
 // Cache
 //$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
 //    'http_cache.cache_dir' => dirname(__DIR__) . '/cache/',
