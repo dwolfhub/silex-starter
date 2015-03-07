@@ -26,7 +26,8 @@ class HomeController {
             [
                 'key' => 'val',
                 'params' => $request->query->all(),
-                'users' => $users
+                'users' => $users,
+                'user' => $app['user']
             ],
             200,
             [
