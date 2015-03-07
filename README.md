@@ -35,3 +35,8 @@ The standard setup will use the cache folder to store response and serve respons
 ## Unit Tests
 
 // TODO
+
+
+## Logging
+
+// TODO
