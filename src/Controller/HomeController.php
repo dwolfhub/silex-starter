@@ -9,6 +9,7 @@ namespace SilexStarter\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController {
 
@@ -18,6 +19,10 @@ class HomeController {
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function index(Application $app, Request $request) {
-        return $app['twig']->render('home.html.twig');
+        $responseText = $app['twig']->render('home.html.twig');
+
+        return new Response($responseText, 200, [
+            'Cache-Control' => 's-maxage=3600, public',
+        ]);
     }
 }

@@ -53,5 +53,4 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
 ]);
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
-
 return $app;
