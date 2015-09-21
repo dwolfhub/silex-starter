@@ -20,7 +20,11 @@
         "deralex/yaml-config-service-provider": "~1.0",
         "knplabs/console-service-provider": "dev-master",
         "robmorgan/phinx": "dev-master",
-        "monolog/monolog": "1.13.*@dev"
+        "monolog/monolog": "1.13.*@dev",
+        "symfony/twig-bridge": "^3.0@dev",
+        "phpunit/phpunit": "4.8.*",
+        "kurl/silex-doctrine-migrations-provider": "dev-master",
+        "doctrine/migrations": "^1.0@dev"
     },
 
     "autoload": {

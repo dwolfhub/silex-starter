@@ -8,7 +8,6 @@
 namespace SilexStarter\Controller;
 
 use Silex\Application;
-use SilexStarter\QueryRepository\UserQueryRepository;
 use Symfony\Component\HttpFoundation\Request;
 
 class HomeController {
@@ -19,20 +18,6 @@ class HomeController {
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function index(Application $app, Request $request) {
-        $usersRepo = new UserQueryRepository($app['db']);
-        $users = $usersRepo->getAll();
-
-        return $app->json(
-            [
-                'key' => 'val',
-                'params' => $request->query->all(),
-                'users' => $users,
-                'user' => $app['user']
-            ],
-            200,
-            [
-                'Cache-Control' => 's-maxage=3600, public'
-            ]
-        );
+        return $app['twig']->render('home.html.twig');
     }
 }

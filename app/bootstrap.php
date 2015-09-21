@@ -11,37 +11,47 @@ $defaultConfigFileLoc = __DIR__ . '/config/default.yml';
 $configFileLoc = file_exists($envConfigFileLoc)? $envConfigFileLoc: $defaultConfigFileLoc;
 $app->register(new DerAlex\Silex\YamlConfigServiceProvider($configFileLoc));
 
-// Debug mode
+// Debug mode?
 $app['debug'] = $app['config']['debug'];
+
+// Console Commands
+$app->register(new Knp\Provider\ConsoleServiceProvider(), [
+    'console.name' => $app['config']['name'],
+    'console.version' => $app['config']['version'],
+    'console.project_directory' => dirname(__DIR__),
+]);
 
 // Database
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => $app['config']['database']
 ]);
+$app->register(
+    new \Kurl\Silex\Provider\DoctrineMigrationsProvider($app['console']),
+    [
+        'migrations.directory' => __DIR__ . '/migrations',
+        'migrations.name' => 'Migrations',
+        'migrations.namespace' => 'SilexStarter\Migrations',
+        'migrations.table_name' => 'migrations',
+    ]
+);
 
 // Logging
 $app->register(new Silex\Provider\MonologServiceProvider(), [
-        'monolog.logfile' => __DIR__ . '/logs/app.log',
+    'monolog.logfile' => __DIR__ . '/logs/app.log',
+    'monolog.level' => constant('\Monolog\Logger::' . $app['config']['logging']['level']),
+    'monolog.name' => $app['config']['name'],
 ]);
 
-// Security
-//$app->register(new Silex\Provider\SecurityServiceProvider());
-
 // Cache
-//$app->register(new Silex\Provider\HttpCacheServiceProvider(), [
-//    'http_cache.cache_dir' => __DIR__ . '/cache/',
-//]);
-//
+$app->register(new Silex\Provider\HttpCacheServiceProvider(), [
+    'http_cache.cache_dir' => __DIR__ . '/cache/',
+]);
+
 // Templates
-//$app->register(new Silex\Provider\TwigServiceProvider(), [
-//    'twig.path' => dirname(__DIR__) . '/frontend/twig',
-//]);
-//
-// Console Commands
-//$app->register(new Knp\Provider\ConsoleServiceProvider(), [
-//    'console.name'              => $app['config']['name'],
-//    'console.version'           => $app['config']['version'],
-//    'console.project_directory' => dirname(__DIR__)
-//]);
+$app->register(new Silex\Provider\TwigServiceProvider(), [
+    'twig.path' => dirname(__DIR__) . '/frontend/twig',
+]);
+$app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
+
 
 return $app;

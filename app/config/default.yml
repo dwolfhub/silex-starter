@@ -13,3 +13,6 @@ database:
     password:
     dbname: database1
     charset: utf8
+
+logging:
+    level: INFO

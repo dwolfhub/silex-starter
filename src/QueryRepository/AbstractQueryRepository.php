@@ -6,7 +6,6 @@ use Doctrine\DBAL\Connection;
 
 abstract class AbstractQueryRepository
 {
-
     /**
      * @var Connection
      */
@@ -26,7 +25,6 @@ abstract class AbstractQueryRepository
             return $this->conn;
         }
     }
-
 
     /**
      * @param Connection $conn
