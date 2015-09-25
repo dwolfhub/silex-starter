@@ -22,7 +22,7 @@ class HomeController {
         $responseText = $app['twig']->render('home.html.twig');
 
         return new Response($responseText, 200, [
-            'Cache-Control' => 's-maxage=3600, public',
+            //'Cache-Control' => 's-maxage=3600, public',
         ]);
     }
 }
