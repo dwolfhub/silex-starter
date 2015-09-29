@@ -54,8 +54,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     $twig->addGlobal(
-        'appjs',
+        'js_filename',
         json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'app.js'}
+    );
+    $twig->addGlobal(
+        'css_filename',
+        json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'style.css'}
     );
     return $twig;
 }));
