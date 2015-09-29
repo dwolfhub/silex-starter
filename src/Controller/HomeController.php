@@ -21,8 +21,6 @@ class HomeController {
     public function index(Application $app, Request $request) {
         $responseText = $app['twig']->render('home.html.twig');
 
-        return new Response($responseText, 200, [
-            //'Cache-Control' => 's-maxage=3600, public',
-        ]);
+        return new Response($responseText, 200);
     }
 }
