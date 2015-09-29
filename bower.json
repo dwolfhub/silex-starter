@@ -1,7 +1,0 @@
-{
-  "name": "silex-starter",
-  "private": true,
-  "dependencies": {
-    "fastclick"  : "~1.0.6"
-  }
-}

@@ -1,13 +1,13 @@
 define([
     'fastclick',
     './module'
-    ], function(FastClick, Module){
-        "use strict";
-        document.addEventListener("DOMContentLoaded", function(event) {
+], function (FastClick, Module) {
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function (event) {
 
-            FastClick.attach(document.body);
+        FastClick.attach(document.body);
 
 
-            var module = new Module();
-        });
+        var module = new Module();
+    });
 });
