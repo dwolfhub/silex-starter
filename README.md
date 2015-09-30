@@ -3,21 +3,32 @@ Silex starter project.
 
 ## Composer
 
-run `composer install` in the app root folder to install dependencies
+run `./composer.phar install` in the app root folder to install dependencies
 
 ## Database
 
 ### Migrations
 
-[phinx](phinx.org)
+Migrations are stored in the `src/Resource/Migration` folder. Run `./app/console` in the app root folder to view migration commands:
 
-run `php vendor/bin/phinx` in the app root folder for commands
+```Text
+migrations
+  migrations:diff      Generate a migration by comparing your current database to your mapping information.
+  migrations:execute   Execute a single migration version up or down manually.
+  migrations:generate  Generate a blank migration class.
+  migrations:migrate   Execute a migration to a specified version or the latest available version.
+  migrations:status    View the status of a set of migrations.
+  migrations:version   Manually add and delete migration versions from the version table.
+```
 
-// TODO: Move to doctrine migrations
+### Query Repositories
 
-### Models and Queries
+The abstract query repository can be found in `src/QueryRepository/`. Extend it to create your own repositories. Then use them like so:
 
-// TODO
+```php
+$myRepo = new SilexStarter\QueryRepository\MyQueryRepo($app['db']);
+$results = $myRepo->myMethod();
+```
 
 ## Routes and Controllers
 
@@ -36,6 +47,12 @@ Check out the [official docs](http://silex.sensiolabs.org/doc/usage.html#routing
 ### Caching
 
 If you want to cache a response, simply add the `Cache-Control` header to something like `s-maxage=3600, public`. The standard setup will use the cache folder to store response and serve responses from there without having to bootstrap the app.
+
+## Views
+
+### Twig
+
+[Twig](http://twig.sensiolabs.org/) templates should be placed in `frontend/twig`. Render a template using `$app['twig']->render('filename.html.twig', ['mykey' => 'myvalue']);`.
 
 ## Unit Tests
 
