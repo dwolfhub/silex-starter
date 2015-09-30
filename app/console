@@ -3,7 +3,7 @@
 
 set_time_limit(0);
 
-use \SilexStarter\Provider\MigrationServiceProvider;
+use SilexStarter\Provider\MigrationServiceProvider;
 use SilexStarter\Command\SomeCommand;
 
 $app = require_once __DIR__ . '/bootstrap.php';
