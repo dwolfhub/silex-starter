@@ -1,4 +1,5 @@
 vendor/
+app/config/local.yml
 app/cache/
 app/logs/*
 public_html/assets/

@@ -1,6 +1,6 @@
 # Configuration for Silex Starter
-# This default config will be loaded unless local.yml exists or
-# APPLICATION_ENV is set and a file of that name exists in this folder
+# Copy this file and call it local.yml to override the default configuration
+
 name: silex-starter
 version: 0.0.1
 debug: true

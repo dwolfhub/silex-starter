@@ -8,7 +8,14 @@ $app['env'] = getenv('APPLICATION_ENV');
 // Config
 $envConfigFileLoc = __DIR__ . '/config/' . $app['env'] . '.yml';
 $defaultConfigFileLoc = __DIR__ . '/config/default.yml';
-$configFileLoc = file_exists($envConfigFileLoc)? $envConfigFileLoc: $defaultConfigFileLoc;
+$localConfigFileLoc = __DIR__ . '/config/local.yml';
+if (file_exists($localConfigFileLoc)) {
+    $configFileLoc = $localConfigFileLoc;
+} else if (file_exists($envConfigFileLoc)) {
+    $configFileLoc = $envConfigFileLoc;
+} else {
+    $configFileLoc = $defaultConfigFileLoc;
+}
 $app->register(new DerAlex\Silex\YamlConfigServiceProvider($configFileLoc));
 
 // Debug mode?
