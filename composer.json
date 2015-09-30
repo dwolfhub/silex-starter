@@ -19,15 +19,18 @@
         "symfony/yaml": "~2.6",
         "deralex/yaml-config-service-provider": "~1.0",
         "knplabs/console-service-provider": "dev-master",
-        "robmorgan/phinx": "dev-master",
         "monolog/monolog": "1.13.*@dev",
         "symfony/twig-bridge": "^3.0@dev",
         "phpunit/phpunit": "4.8.*",
-        "kurl/silex-doctrine-migrations-provider": "dev-master",
-        "doctrine/migrations": "^1.0@dev"
+        "knplabs/migration-service-provider": "dev-master"
     },
 
     "autoload": {
         "psr-4": {"SilexStarter\\": "src/"}
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "./app/console knp:migration:migrate"
+        ]
     }
 }

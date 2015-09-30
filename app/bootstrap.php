@@ -25,15 +25,6 @@ $app->register(new Knp\Provider\ConsoleServiceProvider(), [
 $app->register(new Silex\Provider\DoctrineServiceProvider(), [
     'db.options' => $app['config']['database']
 ]);
-$app->register(
-    new \Kurl\Silex\Provider\DoctrineMigrationsProvider($app['console']),
-    [
-        'migrations.directory' => __DIR__ . '/migrations',
-        'migrations.name' => 'Migrations',
-        'migrations.namespace' => 'SilexStarter\Migrations',
-        'migrations.table_name' => 'migrations',
-    ]
-);
 
 // Logging
 $app->register(new Silex\Provider\MonologServiceProvider(), [
