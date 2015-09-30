@@ -1,17 +1,15 @@
 #!/usr/bin/env php
 <?php
 
-use \Doctrine\DBAL\Migrations\Tools\Console\Command;
-
-
 set_time_limit(0);
+
+use \SilexStarter\Provider\MigrationServiceProvider;
+use SilexStarter\Command\SomeCommand;
 
 $app = require_once __DIR__ . '/bootstrap.php';
 
-$app->register(new \Knp\Provider\MigrationServiceProvider(), array(
-    'migration.path' => __DIR__ . '/migrations'
-));
+$app->register(new MigrationServiceProvider());
 
-$app['console']->add(new \SilexStarter\Command\SomeCommand());
+$app['console']->add(new SomeCommand());
 
 $app['console']->run();

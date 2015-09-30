@@ -14,5 +14,11 @@ database:
     dbname: database1
     charset: utf8
 
+migrations:
+    namespace: 'SilexStarter\Resource\Migration'
+    path: 'Resource/Migration/' # relative to src/
+    table: 'migrations'
+    name: 'migrations'
+
 logging:
     level: INFO
