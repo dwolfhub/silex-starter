@@ -12,14 +12,6 @@ class MigrationServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
-//        $helpers = ['dialog' => new QuestionHelper()];
-//        if (isset($app['orm.em'])) {
-//            $helpers['em'] = new EntityManagerHelper($app['orm.em']);
-//        }
-//
-//        $helperSet = new HelperSet($helpers);
-//        $app->setHelperSet($helperSet);
-
         $config = new Configuration($app['db']);
         $migrationDir = dirname(__DIR__) . '/' . $app['config']['migrations']['path'];
 
