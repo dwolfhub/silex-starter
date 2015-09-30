@@ -5,6 +5,10 @@ Silex starter project.
 
 run `./composer.phar install` in the app root folder to install dependencies
 
+## Configuration
+
+Config files are located in `app/config`. Copy the `local-sample.yml` file and name it `local.yml` to override all other configuration files. If that does not exist, it will see if the environment variable `APPLICATION_ENV` is set and load a `<APPLICATION_ENV>.yml` file. If that doesn't exist, the `default.yml` will be loaded as a baseline.
+
 ## Database
 
 ### Migrations
