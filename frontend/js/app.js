@@ -7,6 +7,6 @@ define([
 
         FastClick.attach(document.body);
 
-        var module = new Module();
+        new Module();
     });
 });

@@ -1,4 +1,4 @@
-define([], function(Module){
+define([], function(){
     "use strict";
 
     var SomeModule = function(){
@@ -7,7 +7,7 @@ define([], function(Module){
     };
 
     SomeModule.prototype = {
-        doSomething : function(event){
+        doSomething : function(){
             console.log('something');
         }
     };
