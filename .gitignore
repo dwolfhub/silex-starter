@@ -1,6 +1,6 @@
 composer.phar
 vendor/
 app/cache/
-app/logs/
+app/logs/*
 public_html/assets/
 node_modules/
