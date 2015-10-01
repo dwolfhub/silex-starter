@@ -50,17 +50,15 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
     'twig.path' => dirname(__DIR__) . '/frontend/twig'
 ]);
 
-$app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
-    $twig->addGlobal(
-        'js_filename',
-        json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'app.js'}
-    );
-    $twig->addGlobal(
-        'css_filename',
-        json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'style.css'}
-    );
-    return $twig;
-}));
+$app['twig']->addGlobal(
+    'js_filename',
+    json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'app.js'}
+);
+$app['twig']->addGlobal(
+    'css_filename',
+    json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'style.css'}
+);
+$app['twig']->addGlobal('debug', $app['debug']);
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 

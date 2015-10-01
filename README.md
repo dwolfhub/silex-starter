@@ -9,6 +9,55 @@ run `./composer.phar install` in the app root folder to install dependencies
 
 Config files are located in `app/config`. Copy the `local-sample.yml` file and name it `local.yml` to override all other configuration files. If that does not exist, it will see if the environment variable `APPLICATION_ENV` is set and load a `<APPLICATION_ENV>.yml` file. If that doesn't exist, the `default.yml` will be loaded as a baseline.
 
+## Frontend
+
+### npm
+[npm](https://www.npmjs.com/) is the package manager used for installing build tools as well as third-party dependencies. Configuration is located in `package.json`.
+
+Run `npm install` to download required tools and modules.
+
+### JavaScript
+
+JavaScript files are located in `frontend/js`. The main entry point for the app is `app.js`. The JavaScript is organized in AMD format.
+
+### Webpack
+[Webpack](https://webpack.github.io/) is a module loader and asset bundler. In this project it's used to bundle and uglify JavaScript. The configuration for Webpack is `webpack.config.js`. Third-party modules, such as [FastClick](https://github.com/ftlabs/fastclick) or [jQuery](https://github.com/jquery/jquery) can be added as `dependencies` in `package.json`, and added as a module via the `alias` configuration in `webpack.config.js`.
+
+[Webpack Documentation](http://webpack.github.io/docs/)
+
+### SASS
+
+[SASS](http://sass-lang.com/) is used for extending CSS with new features and compiles into CSS. The SASS files are located at `frontend/scss`, and the main SASS file is `style.scss`.
+
+### Task Runner
+
+`Gulp` is the task runner used to automate compilation tasks. `gulpfile.js` is the configuration file.
+
+Run `gulp` to perform the default task.
+
+Use `gulp watch` to watch for file changes and livereload the page in real time.
+
+```Text
+Gulp tasks
+watch      watches files in `frontend` and runs `sass or `build-js` tasks
+clean      removes old versions of JS and CSS files from `public_html\assets`
+uglify-js  uglifies and disables debug mode for webpack
+build-js   compiles JavaScript AMD modules into app.js
+sass       compiles SASS files
+default    runs `clean`, `build-js`, and `sass` tasks
+dev        alias of `dev` task
+test       alias of `prod` task
+staging    alias of `prod` task
+uat        alias of `prod` task
+master     alias of `prod` task
+prod       runs `clean`, `uglify-js`m `build-js`, and `sass` tasks
+
+
+```
+
+
+
+
 ## Database
 
 ### Migrations
@@ -57,6 +106,14 @@ If you want to cache a response, simply add the `Cache-Control` header to someth
 ### Twig
 
 [Twig](http://twig.sensiolabs.org/) templates should be placed in `frontend/twig`. Render a template using `$app['twig']->render('filename.html.twig', ['mykey' => 'myvalue']);`.
+
+```Text
+Global Variables
+debug         Boolean containing the application debug state
+js_filename   dynamically revisioned name of the compiled JavaScript modules
+css_filename  dynamically revisioned name of the compiled SASS files
+
+```
 
 ## Unit Tests
 

@@ -2,16 +2,17 @@
 <html>
 <head>
     <title>{% block title %}Welcome!{% endblock %}</title>
-
+{% if debug %}
     <script src="//localhost:35729/livereload.js"></script>
+{% endif %}
     <script src="/assets/js/{{ js_filename }}"></script>
+    <link rel="stylesheet" href="/assets/styles/{{ css_filename }}">
     {% block scripts %}{% endblock %}
 </head>
 <body>
     {% block body %}
         <h1>Hello!</h1>
     {% endblock %}
-    <link rel="stylesheet" href="/assets/styles/{{ css_filename }}">
     {% block styles %}{% endblock %}
 </body>
 </html>

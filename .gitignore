@@ -1,6 +1,6 @@
 vendor/
 app/config/local.yml
-app/cache/
-app/logs/*
+app/cache/**/
+app/logs/*.log
 public_html/assets/
 node_modules/
