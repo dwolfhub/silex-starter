@@ -22,7 +22,8 @@
         "monolog/monolog": "1.13.*@dev",
         "symfony/twig-bridge": "^3.0@dev",
         "phpunit/phpunit": "4.8.*",
-        "doctrine/migrations": "^1.1@dev"
+        "doctrine/migrations": "^1.1@dev",
+        "silex/web-profiler": "^1.0"
     },
 
     "autoload": {

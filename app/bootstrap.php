@@ -62,4 +62,14 @@ $app['twig']->addGlobal('debug', $app['debug']);
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
+// web profiler
+if ($app['debug']) {
+    $app->register(new Silex\Provider\WebProfilerServiceProvider(), array(
+        'profiler.cache_dir' => __DIR__ . '/cache/profiler',
+        'profiler.mount_prefix' => '/_profiler', // this is the default
+    ));
+    $app->register(new Silex\Provider\HttpFragmentServiceProvider());
+    $app->register(new Silex\Provider\ServiceControllerServiceProvider());
+}
+
 return $app;
