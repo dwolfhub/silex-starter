@@ -47,7 +47,10 @@ $app->register(new Silex\Provider\HttpCacheServiceProvider(), [
 
 // Templates
 $app->register(new Silex\Provider\TwigServiceProvider(), [
-    'twig.path' => dirname(__DIR__) . '/frontend/twig'
+    'twig.path' => dirname(__DIR__) . '/frontend/twig',
+    'twig.options' => [
+        'cache' => __DIR__ . '/cache/',
+    ]
 ]);
 
 $app['twig']->addGlobal(
