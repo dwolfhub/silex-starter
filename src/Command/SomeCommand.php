@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: danielwolf
- * Date: 3/5/15
- * Time: 7:08 PM
- */
 
 namespace SilexStarter\Command;
-
 
 use Knp\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,9 +8,11 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class SomeCommand extends Command {
+class SomeCommand extends Command
+{
 
-    protected function configure() {
+    protected function configure()
+    {
         $this->setName('some:command')
             ->setDescription('Some command.')
             ->addArgument(
