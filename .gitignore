@@ -4,3 +4,4 @@ app/cache/**/
 app/logs/*.log
 public_html/assets/
 node_modules/
+.idea/
