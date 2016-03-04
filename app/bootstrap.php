@@ -53,15 +53,25 @@ $app->register(new Silex\Provider\TwigServiceProvider(), [
     ]
 ]);
 
-$app['twig']->addGlobal(
-    'js_filename',
-    json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'app.js'}
-);
-$app['twig']->addGlobal(
-    'css_filename',
-    json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'style.css'}
-);
-$app['twig']->addGlobal('debug', $app['debug']);
+// Adding Twig globals
+$app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
+    // Debug variable
+    $twig->addGlobal('debug', $app['debug']);
+
+    // Javascript files
+    $twig->addGlobal(
+        'js_filename',
+        json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'app.js'}
+    );
+
+    // CSS files
+    $twig->addGlobal(
+        'css_filename',
+        json_decode(file_get_contents(dirname(__DIR__) . '/public_html/assets/assets.json'))->{'style.css'}
+    );
+
+    return $twig;
+}));
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
